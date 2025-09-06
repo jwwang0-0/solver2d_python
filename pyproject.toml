@@ -1,0 +1,21 @@
+[build-system]
+requires = ["scikit-build-core>=0.9.0", "pybind11>=2.11", "cmake>=3.22", "ninja"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "solver2d-py"
+version = "0.0.1"
+description = "Tiny Python binding for solver2d (TGS_Soft smoke test)"
+requires-python = ">=3.8"
+authors = [{ name = "You" }]
+readme = "README.md"
+license = { text = "MIT" }
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+cmake.minimum-version = "3.22"
+cmake.args = [
+  "-DPYBIND11_CPP_STANDARD=c++17",
+]
+cmake.build-type = "Debug"
+wheel.packages = ["solver2d_py"]
