@@ -34,6 +34,8 @@ void s2DestroyBody(s2BodyId bodyId);
 s2Vec2 s2Body_GetPosition(s2BodyId bodyId);
 float s2Body_GetAngle(s2BodyId bodyId);
 s2Vec2 s2Body_GetLocalPoint(s2BodyId bodyId, s2Vec2 globalPoint);
+s2Vec2 s2Body_GetLinearVelocity(s2BodyId bodyId);
+float s2Body_GetAngularVelocity(s2BodyId bodyId);
 
 void s2Body_SetTransform(s2BodyId bodyId, s2Vec2 position, float angle);
 void s2Body_SetLinearVelocity(s2BodyId bodyId, s2Vec2 linearVelocity);

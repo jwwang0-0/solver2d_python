@@ -327,6 +327,19 @@ float s2Body_GetAngle(s2BodyId bodyId)
 	return s2Rot_GetAngle(world->bodies[bodyId.index].rot);
 }
 
+s2Vec2 s2Body_GetLinearVelocity(s2BodyId bodyId)
+{
+	s2World* world = s2GetWorldFromIndex(bodyId.world);
+	S2_ASSERT(0 <= bodyId.index && bodyId.index < world->bodyPool.capacity);
+	return world->bodies[bodyId.index].linearVelocity;
+}
+float s2Body_GetAngularVelocity(s2BodyId bodyId)
+{
+	s2World* world = s2GetWorldFromIndex(bodyId.world);
+	S2_ASSERT(0 <= bodyId.index && bodyId.index < world->bodyPool.capacity);
+	return world->bodies[bodyId.index].angularVelocity;
+}
+
 s2Vec2 s2Body_GetLocalPoint(s2BodyId bodyId, s2Vec2 globalPoint)
 {
 	s2World* world = s2GetWorldFromIndex(bodyId.world);
